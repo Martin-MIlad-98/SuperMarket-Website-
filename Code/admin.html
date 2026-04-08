@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard - SuperMart</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">SuperMart Admin</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#" id="logout-btn">Logout</a></li>
+    </ul>
+  </nav>
+
+  <div class="admin-container">
+    <aside class="sidebar">
+      <button class="tab-btn active" data-tab="products">Products</button>
+      <button class="tab-btn" data-tab="inventory">Inventory</button>
+      <button class="tab-btn" data-tab="orders">Orders</button>
+      <button class="tab-btn" data-tab="users">Users</button>
+    </aside>
+
+    <main class="admin-main">
+      <!-- Products Tab -->
+      <div id="products" class="tab-content active">
+        <h2>Product Management</h2>
+        <form id="product-form">
+          <input type="text" id="prod-name" placeholder="Product Name" required />
+          <select id="prod-category" required>
+            <option value="Groceries">Groceries</option>
+            <option value="Drinks">Drinks</option>
+            <option value="Snacks">Snacks</option>
+          </select>
+          <input type="number" id="prod-price" placeholder="Price" step="0.01" required />
+          <input type="number" id="prod-stock" placeholder="Stock" required />
+          <button type="submit">Add Product</button>
+        </form>
+        <div id="product-table"></div>
+      </div>
+
+      <!-- Inventory Tab -->
+      <div id="inventory" class="tab-content">
+        <h2>Inventory Management</h2>
+        <div id="inventory-table"></div>
+      </div>
+
+      <!-- Orders Tab -->
+      <div id="orders" class="tab-content">
+        <h2>Order Management</h2>
+        <div id="admin-orders-list"></div>
+      </div>
+
+      <!-- Users Tab -->
+      <div id="users" class="tab-content">
+        <h2>User Management</h2>
+        <div id="users-table"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
